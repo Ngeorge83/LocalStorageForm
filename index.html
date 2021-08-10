@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js"></script>
+<title>Contact Form</title>
+</head>
+
+<body>
+
+    <header class="body">
+    </header>
+    <div id="home">
+      <p>Home Page</p>
+      <br />
+      <button onclick="showDiv('form')">New</button>
+      <button onclick="showDiv('search')">Search</button>
+    </div>
+
+    <div id="form" style="display: none;">
+      <p>Kindly enter details in the below form</p>
+      <br>
+      <button onclick="showDiv('home')">Home</button>
+      <br>
+      <div id="error"></div>
+       <form id="mform" method="GET">
+          <label>First Name:</label>
+          <input id="fname"  placeholder="Type Here">
+
+          <label>Last Name:</label>
+          <input id="lname" placeholder="Type Here">
+
+          <label>Address:</label>
+          <input id="address" placeholder="Type Here">
+
+          <label>City:</label>
+          <input id="city" placeholder="Type Here">
+
+          <label>Province:</label>
+          <input id="province" placeholder="Type Here">
+
+          <label>Postal Code:</label>
+          <input id="pcode" placeholder="Type Here">
+
+          <label>Phone Number:</label>
+          <input id="phoneno" placeholder="Type Here">
+                  
+          <label>Email Address:</label>
+          <input id="email" type="email" placeholder="Type Here">
+                  
+          <label>Notes:</label>
+          <textarea id="notes" placeholder="Type Here"></textarea>
+
+          <button type="button" onClick="savePerson()">Submit</button>       
+        </form>
+    </div>
+
+    <div id="display" style="display: none;">
+      <p>Below you can see your details</p>
+      <br>
+      <button onclick="showDiv('home')">Home</button>
+      <br>
+      <div id="person"></div>
+    </div>
+
+    <div id="search" style="display: none;">
+      <p>The Searched details are as following:</p>
+      <br>
+      <label>ID</label>
+      <input id="id" placeholder="Enter the id">
+      <button id="id" onclick="myfunction()">Search Person</button>
+      <button onclick="showDiv('home')">Home</button>
+      <br>
+    </div>
+    
+   <br>
+   <br>
+    <a href="#About" onclick="ShowList()" id="ShowAboutButton">Show List of Form Entries</a>
+
+    <div id="About" style="display: none;">
+      <br>
+      <br>
+      <button onclick="showDiv('home')">Home</button>
+     
+    </div>
+
+    <footer class="body">
+    </footer>
+
+</body>
+
+</html>
