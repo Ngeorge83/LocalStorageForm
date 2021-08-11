@@ -8,3 +8,4 @@ Nissi George Vairamon Student ID:8758766
 -Phone Number follows 123-123-1234, or (123)123-1234 format.
 - Once submitted the information is displayed on the Display screen.
 - The user can click the home screen to be able to navigate back to the main page.
+- The hyper link takes you to the list of datas entered and a back to home button is provided aswell.
