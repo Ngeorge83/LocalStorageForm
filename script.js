@@ -40,10 +40,7 @@ const savePerson = () => {
   
  let Message="";
   if (firstName == "" || firstName == null) {
-    //Message="First Name is Required!\n";
-    //errorMessage.innerHTML += "<p id='error-fname'> hello, world </p>"
     document.getElementById('error-fname').innerText="Hello World!"
-    console.log("Hello");
   }
    if(lastName == "" || lastName == null) {
     Message+=" Last Name is Required! \n";
@@ -67,7 +64,7 @@ const savePerson = () => {
   }
   
   if (Message.length > 0) {
-   // errorElement.innerText = Message;
+    //errorElement.innerText = Message;
   }
   else{
 
