@@ -23,8 +23,9 @@
       <p>Kindly enter details in the below form</p>
       <br>
       <button onclick="showDiv('home')">Home</button>
-      <br>
-      <div id="error"></div>
+      <div id="error">
+        <p id='error-fname'></p>
+      </div>
        <form id="mform" method="GET">
           <label>First Name:</label>
           <input id="fname"  placeholder="Type Here">
@@ -61,7 +62,6 @@
       <p>Below you can see your details</p>
       <br>
       <button onclick="showDiv('home')">Home</button>
-      <br>
       <div id="person"></div>
     </div>
 
@@ -70,21 +70,14 @@
       <br>
       <label>ID</label>
       <input id="id" placeholder="Enter the id">
-      <button id="id" onclick="myfunction()" >Search Person</button>
+      <button id="id" onclick="myfunction()">Search Person</button>
       <button onclick="showDiv('home')">Home</button>
-      <br>
     </div>
     
-   <br>
-   <br>
-    <a href="#About" onclick="ShowList()" id="ShowAboutButton">Show List of Form Entries</a>
+    <a href="#About" onclick="showList()" id="ShowAboutButton">Show List of Form Entries</a>
 
     <div id="About" style="display: none;">
-      <br>
-      <br>
       <button onclick="showDiv('home')">Home</button>
-      <button onclick="showDiv('home')">Remove</button>
-     
     </div>
 
     <footer class="body">

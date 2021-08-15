@@ -20,7 +20,7 @@ const savePerson = () => {
   const notesElement = document.getElementById("notes");
   const notes = notesElement.value;
   const errorElement = document.getElementById("error");
- 
+  const mform = document.getElementById("mform");
 
   function PostalCode(pcode) {
     const postalCodeRegex = new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVXY][ -]?\d[ABCEGHJKLMNPRSTVXY]\d$/i)
@@ -40,7 +40,10 @@ const savePerson = () => {
   
  let Message="";
   if (firstName == "" || firstName == null) {
-    Message="First Name is Required!\n";
+    //Message="First Name is Required!\n";
+    //errorMessage.innerHTML += "<p id='error-fname'> hello, world </p>"
+    document.getElementById('error-fname').innerText="Hello World!"
+    console.log("Hello");
   }
    if(lastName == "" || lastName == null) {
     Message+=" Last Name is Required! \n";
@@ -64,7 +67,7 @@ const savePerson = () => {
   }
   
   if (Message.length > 0) {
-    errorElement.innerText = Message;
+   // errorElement.innerText = Message;
   }
   else{
 
@@ -136,14 +139,13 @@ const showDiv = (name) => {
 const displayPerson = (person) => {
   const personElement = document.getElementById("person");
   personElement.innerHTML = `
-  <p>ID: ${person.id}</p>
+  <p>Id: ${person.id}</p>
   <p>First Name: ${person.firstName}</p>
   <p>Last Name: ${person.lastName}</p>
   <p>Address: ${person.address}</p>
   <p>City: ${person.city}</p>
   <p>Province: ${person.province}</p>
   <p>Postal Code: ${person.pcode}</p>
-  <p>Phone Number: ${person.phoneno}</p>
   <p>Email: ${person.email}</p>
   <p>Notes: ${person.notes}</p>
   `;
@@ -154,52 +156,37 @@ const myfunction = (id) => {
   storage.get(id);
   //displayPerson(id);
   personElement.innerHTML = `
-  <p>ID: ${person.id}</p>
+  <p>Id: ${person.id}</p>
   <p>First Name: ${person.firstName}</p>
   <p>Last Name: ${person.lastName}</p>
   <p>Address: ${person.address}</p>
   <p>City: ${person.city}</p>
   <p>Province: ${person.province}</p>
   <p>Postal Code: ${person.pcode}</p>
-  <p>Phone Number: ${person.phoneno}</p>
   <p>Email: ${person.email}</p>
   <p>Notes: ${person.notes}</p>
   `;
   showDiv("display");
 };
 
-
-const ShowList = () => {
-  storage.set(1, {
-    id: 1,
-    firstName: 'Nissi',
-    lastName: 'George',
-    address: 'test',
-    city:'test',
-    province:'test',
-    pcode:'N1A 2A2',
-    phoneno:'123-123-1234',
-    email:'test',
-  });
-  console.log('ShowList');
-  const personElement = document.getElementById("person");
+const showList= () =>{
+  const personElement = document.getElementById("id");
+  let personid =storage.get(id);
   personElement.innerHTML = '';
-  storage.forEach((person) => {
+  storage.forEach((personid) => {
     console.log(person);
     personElement.innerHTML += `
-      <p>ID: ${person.id}</p>
+      <p>Id: ${person.id}</p>
       <p>First Name: ${person.firstName}</p>
       <p>Last Name: ${person.lastName}</p>
       <p>Address: ${person.address}</p>
       <p>City: ${person.city}</p>
       <p>Province: ${person.province}</p>
       <p>Postal Code: ${person.pcode}</p>
-      <p>Phone Number: ${person.phoneno}</p>
       <p>Email: ${person.email}</p>
       <p>Notes: ${person.notes}</p>
-    `;
-  });
-  console.log(personElement.innerHTML);
-  showDiv('display');
-}
-
+      `;
+    });
+    console.log(personElement.innerHTML);
+    showDiv('display');
+  }
