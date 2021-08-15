@@ -13,7 +13,7 @@
     <header class="body">
     </header>
     <div id="home">
-      <p>Home Page</p>
+      <p>Event Registration</p>
       <br />
       <button onclick="showDiv('form')">New</button>
       <button onclick="showDiv('search')">Search</button>
@@ -25,7 +25,17 @@
       <button onclick="showDiv('home')">Home</button>
       <br>
       <div id="error">
-        <p id='error-fname'></p></div>
+        <p id='error-fname'></p>
+        <p id='error-lname'></p>
+        <p id='error-address'></p>
+        <p id='error-city'></p>
+        <p id='error-province'></p>
+        <p id='error-pcode'></p>
+        <p id='error-phoneno'></p>
+        <p id='error-email'></p>
+        <p id='error-notes'></p>
+        <p id='error-duration'></p>
+      </div>
        <form id="mform" method="GET">
           <label>First Name:</label>
           <input id="fname"  placeholder="Type Here">
@@ -54,9 +64,19 @@
           <label>Notes:</label>
           <textarea id="notes" placeholder="Type Here"></textarea>
 
+          <select name="duration" id="dur">
+            <option value="">-----Select-----</option>		
+            <option value="350$">First Day</option>
+            <option value="450$">Second Day</option>
+            <option value="750$">Both Days</option>
+          </select> 
+          <br>
+          <br>
+
           <button type="button" onClick="savePerson()">Submit</button>       
         </form>
     </div>
+  </div>
 
     <div id="display" style="display: none;">
       <p>Below you can see your details</p>
@@ -79,6 +99,8 @@
     <div id="About" style="display: none;">
       <button onclick="showDiv('home')">Home</button>
     </div>
+
+    
 
     <footer class="body">
     </footer>

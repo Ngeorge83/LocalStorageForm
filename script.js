@@ -19,8 +19,8 @@ const savePerson = () => {
   const email = emailElement.value;
   const notesElement = document.getElementById("notes");
   const notes = notesElement.value;
-  const errorElement = document.getElementById("error");
-  const mform = document.getElementById("mform");
+  const durElement = document.getElementById("dur");
+  const duration=durElement.value;
 
   function PostalCode(pcode) {
     const postalCodeRegex = new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVXY][ -]?\d[ABCEGHJKLMNPRSTVXY]\d$/i)
@@ -34,37 +34,49 @@ const savePerson = () => {
     if (phoneno.match(phone)) {
       return true;
     } else {
-      Message+="Phone Number is not Valid!\n";
+      document.getElementById('error-phoneno').innerText="Phone number is not Valid!"
+      errors=true;
     }
   }
   
- let Message="";
+ let errors=false;
   if (firstName == "" || firstName == null) {
-    document.getElementById('error-fname').innerText="Hello World!"
+    document.getElementById('error-fname').innerText="First Name is Required!"
+    errors=true;
   }
    if(lastName == "" || lastName == null) {
-    Message+=" Last Name is Required! \n";
+    document.getElementById('error-lname').innerText="Last Name is Required!"
+    errors=true;
   }
   if(address == "" || address == null)
   {
-    Message+=" Address is Required!\n";
+    document.getElementById('error-address').innerText="Last Name is Required!"
+    errors=true;
   }
  if (city == "" || city == null) {
-  Message+=" City is Required!\n";
+  document.getElementById('error-city').innerText="City is Required!"
+  errors=true;
   } if (province == "" || province == null) {
-  Message+=" Province is Required!\n";
+    document.getElementById('error-province').innerText="Province is Required!"
+    errors=true;
   } if (PostalCode(pcode) == false) {
-    Message+=" Postal Code is not Valid!\n";
+    document.getElementById('error-pcode').innerText="Postal Code is not Valid!"
+    errors=true;
   } if (phonenumber(phoneno) == false) {
     phonenumber(phoneno);
   }if(email == "" || email == null) {
-    Message+=" Email is Required! \n";
+    document.getElementById('error-email').innerText="Email is required!";
+    errors=true;
   }if(notes == "" || notes == null) {
-    Message+=" Notes are Required! \n";
+    document.getElementById('error-notes').innerText="Notes are required!";
+    errors=true;
   }
-  
-  if (Message.length > 0) {
-    //errorElement.innerText = Message;
+  if(duration == "" || duration == null) {
+    document.getElementById('error-duration').innerText="Duration is required!";
+  }
+  console.log(duration)
+  if (errors) {
+    console.log(errors);
   }
   else{
 
@@ -84,6 +96,7 @@ const savePerson = () => {
     pcode,
     email,
     notes,
+    duration
   };
 
   console.log(person);
@@ -145,6 +158,7 @@ const displayPerson = (person) => {
   <p>Postal Code: ${person.pcode}</p>
   <p>Email: ${person.email}</p>
   <p>Notes: ${person.notes}</p>
+  <p>Notes: ${person.duration}</p>
   `;
 };
 
