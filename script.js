@@ -176,6 +176,7 @@ const myfunction = (id) => {
   <p>Postal Code: ${person.pcode}</p>
   <p>Email: ${person.email}</p>
   <p>Notes: ${person.notes}</p>
+  <p>Notes: ${person.duration}</p>
   `;
   showDiv("display");
 };
@@ -196,6 +197,7 @@ const showList= () =>{
       <p>Postal Code: ${person.pcode}</p>
       <p>Email: ${person.email}</p>
       <p>Notes: ${person.notes}</p>
+      <p>Notes: ${person.duration}</p>
       `;
     });
     console.log(personElement.innerHTML);
