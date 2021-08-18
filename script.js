@@ -50,7 +50,7 @@ const savePerson = () => {
   }
   if(address == "" || address == null)
   {
-    document.getElementById('error-address').innerText="Last Name is Required!"
+    document.getElementById('error-address').innerText="Address is Required!"
     errors=true;
   }
  if (city == "" || city == null) {
